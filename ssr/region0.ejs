@@ -19,7 +19,7 @@
     <title>Dashboard - Example project</title>
     <!-- CSS files -->
     <link
-      href="css/tabler.min.css"
+      href="../../css/tabler.min.css"
       rel="stylesheet"
     />
     <link
@@ -266,7 +266,7 @@
             <div class="row align-items-center">
               <div class="col">
                 <!-- Page pre-title -->
-                <h2 class="page-title">Dashboard - Level <%= level %></h2>
+                <h2 class="page-title">Dashboard - Region <%= region %> - Level <%= level %></h2>
               </div>
               <!-- Page title actions -->
               <div class="col-auto ml-auto d-print-none">
@@ -347,7 +347,7 @@
               </div>
             </div>
             <div class="col-sm-6 col-lg-6">
-              <div class="card" onclick="window.location.href = '/1/1'">
+              <div class="card">
                 <div class="card-body">
                   <div class="d-flex align-items-center">
                     <div class="subheader">Region 1</div>
@@ -483,8 +483,8 @@
         other: [<%- chartData.other %>],
       };
     </script>
-    <script src="js/areaChart.js"></script>
-    <script src="js/stackedBarChart.js"></script>
+    <script src="../../js/areaChart.js"></script>
+    <script src="../../js/stackedBarChart.js"></script>
     <script>
       document.body.style.display = "block";
     </script>
