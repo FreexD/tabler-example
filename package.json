@@ -1,0 +1,44 @@
+{
+  "name": "tabler-example",
+  "version": "1.0.0",
+  "description": "Tabler integration example.",
+  "main": "gulpfile.js",
+  "scripts": {
+    "static": "http-server ./static --port $npm_package_config_staticPort",
+    "watch:static": "gulp watchStatic",
+    "dev:static": "npm-run-all --parallel static watch:static",
+    "ssr": "nodemon ssr/app.js",
+    "watch:ssr": "gulp watchSsr",
+    "dev:ssr": "npm-run-all --parallel ssr watch:ssr",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "config": {
+    "staticPort": "8080",
+    "ssrPort": "8081"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FreexD/tabler-example.git"
+  },
+  "keywords": [
+    "tabler"
+  ],
+  "author": "michalwoln@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/FreexD/tabler-example/issues"
+  },
+  "homepage": "https://github.com/FreexD/tabler-example#readme",
+  "devDependencies": {
+    "browser-sync": "2.26.13",
+    "ejs": "3.1.5",
+    "express": "4.17.1",
+    "gulp": "4.0.2",
+    "http-server": "0.12.3",
+    "nodemon": "2.0.6",
+    "npm-run-all": "4.1.5"
+  },
+  "dependencies": {
+    "@tabler/core": "1.0.0-alpha.12"
+  }
+}
