@@ -42,16 +42,6 @@ const getChartData = () => {
   return { profits, web, social, other };
 };
 
-var content = 0;
-
-fs.readFile(path.join(__dirname, "data.txt"), "utf8", function (err, data) {
-  if (err) {
-    return console.log(err);
-  }
-  console.log(data);
-  content = parseInt(data);
-});
-
 //  static files serving
 app.use("/js", express.static(path.join(__dirname, "js")));
 app.use("/img", express.static(path.join(__dirname, "img")));
@@ -69,6 +59,19 @@ app.get("/:level?", function (req, res) {
   if (level > 5) {
     res.redirect('/5');
   }
+
+  const data = fs.readFileSync(
+    path.join(__dirname, "data.txt"),
+    "utf8",
+    function (err, data) {
+      if (err) {
+        return console.log(err);
+      }
+      console.log(data);
+      content = parseInt(data);
+    }
+  );
+
   // Render page using renderFile method
   ejs.renderFile(
     "ssr/index.ejs",
@@ -76,7 +79,7 @@ app.get("/:level?", function (req, res) {
       lastSync: lastSyncTime(),
       chartData: getChartData(),
       level: level,
-      sales: content,
+      sales: parseInt(data),
     },
     {},
     function (err, template) {
