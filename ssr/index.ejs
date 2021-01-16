@@ -32,11 +32,6 @@
       }
     </style>
     <script src="js/utilities.js"></script>
-    <script>
-      window.onload = () => {
-        refreshTheme();
-      }
-    </script>
   </head>
   <body class="antialiased">
     <div class="page">
@@ -457,6 +452,7 @@
     <!-- Tabler Core -->
     <script src="https://unpkg.com/@tabler/core@1.0.0-alpha.13/dist/js/tabler.min.js"></script>
     <!-- Charts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js" integrity="sha512-3j3VU6WC5rPQB4Ld1jnLV7Kd5xr+cq9avvhwqzbH/taCRNURoeEpoPBK9pDyeukwSxwRPJ8fDgvYXd6SkaZ2TA==" crossorigin="anonymous"></script>
     <script>
       level = <%- level %>;
       chartData = {
@@ -478,8 +474,8 @@
     <script src="js/areaChart.js"></script>
     <script src="js/stackedBarChart.js"></script>
     <script>
+      refreshTheme();
       document.body.style.display = "block";
     </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js" integrity="sha512-3j3VU6WC5rPQB4Ld1jnLV7Kd5xr+cq9avvhwqzbH/taCRNURoeEpoPBK9pDyeukwSxwRPJ8fDgvYXd6SkaZ2TA==" crossorigin="anonymous"></script>
   </body>
 </html>
